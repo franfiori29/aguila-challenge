@@ -8,9 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* #root {
-  display: flex;
-} */
+/* SIDEBAR */
 
 aside {
   height: 100%;
@@ -46,20 +44,6 @@ aside a {
   margin: 0 12px;
 }
 
-.logo {
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.divider {
-  border: .5px solid #DFE0EB;
-  height: 20px;
-}
-
-.profileName {
-  font-weight: 600;
-}
-
 .asideOption {
   height: 100px;
   display: flex;
@@ -87,6 +71,8 @@ aside a {
   padding: 0px 10px;
 }
 
+/* NAVBAR */
+
 nav {
   height: 100px;
   display: flex;
@@ -100,12 +86,87 @@ nav {
   font-size: 1.6em;
 }
 
+.logo {
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.divider {
+  border: .5px solid #DFE0EB;
+  height: 20px;
+}
+
+.profileName {
+  font-weight: 600;
+}
+
 .navOptions {
   flex-basis: 300px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-right: 3em;
+}
+
+/* LOGIN */
+
+.loginForm {
+  width: 100%;
+  height: 100%;
+  padding-top: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginForm h1 {
+  margin-bottom: 50px;
+}
+
+.loginForm label {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.loginForm input {
+  outline: none;
+  border: 0px;
+  border-bottom: 1px solid rgb(85, 84, 84);
+  width: 300px;
+  font-size: 1.1em;
+}
+
+.loginForm>* {
+  margin: 10px;
+}
+
+.loginForm input:focus {
+  border: 0px;
+  border-bottom: 2px solid black;
+}
+
+.loginForm button {
+  background-color: #3F4049;
+  border-width: 0;
+  color: white;
+  width: 300px;
+  height: 50px;
+  border-radius: 40px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.loginForm ul {
+  background-color: #F0D9D9;
+  color: rgb(161, 6, 6);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.loginForm li {
+  margin: 10px;
+  list-style-type: none;
 }
 
 .home {
@@ -116,11 +177,14 @@ nav {
   margin-top: 50px;
 }
 
-@media screen and (max-height: 450px) {
+@media(max-width: 450px) {
   aside {
     padding-top: 15px;
   }
   .home a {
     font-size: 18px;
+  }
+  .loginForm {
+    padding-top: 120px;
   }
 }

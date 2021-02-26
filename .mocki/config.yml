@@ -89,12 +89,16 @@ endpoints:
                 status: true,
               },
             ]
-  - path: /
-    method: get
+  - path: /login
+    method: post
     responses:
       - statusCode: 200
         body:
-          message: Hello from Mocki
+          {
+            firstName: 'Franco',
+            lastName: 'Fiori',
+            pictureUrl: 'https://media-exp1.licdn.com/dms/image/C4E03AQFj5lElRrDpXA/profile-displayphoto-shrink_800_800/0/1610550870146?e=1619654400&v=beta&t=23a7vpHEAg14GmC9Nedcu8WpogSJWAZDXtxfyWgBvNY',
+          }
         headers:
           - name: content-type
             value: application/json
