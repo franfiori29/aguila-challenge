@@ -6,7 +6,7 @@ export const AppContext = React.createContext({});
 export const useAppContext = () => useContext(AppContext);
 
 export const AppProvider = ({ children }) => {
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 	const [todos, setTodos] = useState([]);
 	const [user, setUser] = useState(null);
 
@@ -17,12 +17,6 @@ export const AppProvider = ({ children }) => {
 		} else {
 			localStorage.setItem('todos', JSON.stringify([]));
 		}
-		fetch(`http://localhost:4000/login`)
-			.then((res) => res.json())
-			.then((res) => {
-				setUser(res);
-				setLoading(false);
-			});
 	}, []);
 
 	return (

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import { useAppContext } from '../context';
+import Spinner from './Spinner';
+const { REACT_APP_API } = process.env;
 
 function Login() {
-	const { user, setUser, loading } = useAppContext();
+	const { user, setUser, loading, setLoading } = useAppContext();
 	const [errors, setErrors] = useState([]);
 	const [inputUser, setInputUser] = useState({
 		username: '',
@@ -30,16 +32,21 @@ function Login() {
 			passwordErrors.push('La contraseña debe tener un mínimo de 7 caracteres');
 
 		if (!passwordErrors.length) {
+			setLoading(true);
 			setErrors([]);
-			fetch('http://localhost:4000/login', {
+			fetch(`${REACT_APP_API}/login`, {
 				method: 'POST',
 			})
 				.then((res) => res.json())
-				.then((res) => console.log('res', res));
+				.then((res) => setUser(res));
 		} else {
 			setErrors(passwordErrors);
 		}
 	};
+
+	if (user) return <Redirect to='/' />;
+
+	if (loading) return <Spinner />;
 
 	return (
 		<form className='loginForm' onSubmit={handleSubmit}>
