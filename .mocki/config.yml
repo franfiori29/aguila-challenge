@@ -50,10 +50,10 @@ endpoints:
               },
               {
                 id: 6,
-                firstName: 'John',
+                firstName: 'Edgard',
                 lastName: 'Smith',
                 phone: '1544119985',
-                email: 'johnsmith@gmail.com',
+                email: 'edgsmith@gmail.com',
                 status: true,
               },
               {
