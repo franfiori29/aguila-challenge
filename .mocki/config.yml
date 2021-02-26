@@ -1,0 +1,100 @@
+name: mocki
+port: 4000
+endpoints:
+  - path: /users
+    method: get
+    responses:
+      - statusCode: 200
+        body:
+          message:
+            [
+              {
+                id: 1,
+                firstName: 'Juan',
+                lastName: 'Pérez',
+                phone: '1144589231',
+                email: 'jp@gmail.com',
+                status: true,
+              },
+              {
+                id: 2,
+                firstName: 'Pedro',
+                lastName: 'Rodriguez',
+                phone: '1141282562',
+                email: 'pedroR@gmail.com',
+                status: false,
+              },
+              {
+                id: 3,
+                firstName: 'Franco',
+                lastName: 'Fiori',
+                phone: '1125230987',
+                email: 'franfiori@gmail.com',
+                status: true,
+              },
+              {
+                id: 4,
+                firstName: 'John',
+                lastName: 'Lennon',
+                phone: '1144552231',
+                email: 'lennonj@gmail.com',
+                status: false,
+              },
+              {
+                id: 5,
+                firstName: 'George',
+                lastName: 'Harrison',
+                phone: '1132459441',
+                email: 'georgeharrison@gmail.com',
+                status: false,
+              },
+              {
+                id: 6,
+                firstName: 'John',
+                lastName: 'Smith',
+                phone: '1544119985',
+                email: 'johnsmith@gmail.com',
+                status: true,
+              },
+              {
+                id: 7,
+                firstName: 'Jospeh',
+                lastName: 'Buttler',
+                phone: '1598726543',
+                email: 'jbu@gmail.com',
+                status: true,
+              },
+              {
+                id: 8,
+                firstName: 'Martín',
+                lastName: 'Palermo',
+                phone: '1152549231',
+                email: 'martinP@gmail.com',
+                status: true,
+              },
+              {
+                id: 9,
+                firstName: 'Homero',
+                lastName: 'Simpson',
+                phone: '1152958223',
+                email: 'hjs@gmail.com',
+                status: false,
+              },
+              {
+                id: 10,
+                firstName: 'Felix',
+                lastName: 'Langyel',
+                phone: '1149835602',
+                email: 'felixlang@gmail.com',
+                status: true,
+              },
+            ]
+  - path: /
+    method: get
+    responses:
+      - statusCode: 200
+        body:
+          message: Hello from Mocki
+        headers:
+          - name: content-type
+            value: application/json
